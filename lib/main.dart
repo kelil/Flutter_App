@@ -2,13 +2,34 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './ui/sura.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(MaterialApp(
-      theme: ThemeData(
-          primaryColor: Colors.brown, accentColor: Colors.yellowAccent),
+import './ui/sura.dart';
+import 'global/theme/bloc/theme_bloc.dart';
+import 'global/theme/bloc/theme_state.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return BlocProvider(
+      builder: (context) => ThemeBloc(),
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: _buildWithTheme,
+      ),
+    );
+  }
+
+  Widget _buildWithTheme(BuildContext context, ThemeState state) {
+    return MaterialApp(
+      title: 'Material App',
       home: SplashScreen(),
-    ));
+      theme: state.themeData,
+    );
+  }
+}
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -23,8 +44,9 @@ class SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(
-        Duration(seconds: 2),
-        () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Sura())));
+        Duration(seconds: 3),
+        () => Navigator.of(context)
+            .pushReplacement(MaterialPageRoute(builder: (context) => Sura())));
   }
 
   @override

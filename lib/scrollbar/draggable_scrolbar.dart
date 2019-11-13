@@ -215,7 +215,7 @@ class DraggableScrollbar extends StatefulWidget {
           height: height,
           width: 23.0,
           decoration: BoxDecoration(
-            color: Colors.brown,
+            color: backgroundColor,
             borderRadius: BorderRadius.all(
               Radius.circular(12.0),
             ),

@@ -26,7 +26,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   sqflite: ^1.1.7+2
   path_provider: ^1.4.0
-  shared_preferences: ^0.4.2
+  shared_preferences: ^0.5.4+3
+  preferences: ^5.0.2
+  flutter_bloc: ^0.20.0
+  equatable: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +53,6 @@ flutter:
       - assets/images/quraana.jpg
       - assets/images/quran_icon.png
       - assets/images/icon_grey.png
-      - assets/images/brown.png
       - assets/images/quranap.jpg
       - assets/hiikaa_quraana.db
 

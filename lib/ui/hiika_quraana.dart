@@ -37,7 +37,6 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
           bottom: Radius.circular(25),
         )),
         centerTitle: true,
-        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: buiderWidget(),
     );
@@ -51,7 +50,7 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
 
         return DraggableScrollbar.arrows(
           alwaysVisibleScrollThumb: false,
-          backgroundColor: Colors.grey[850],
+          backgroundColor: Theme.of(context).primaryColor,
           padding: EdgeInsets.only(right: 4.0),
           controller: controller,
           child: ListView.builder(
@@ -74,9 +73,8 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
                         title: Text(
                           datas,
                           style: TextStyle(
-                              fontSize: 33,
+                              fontSize: 25,
                               fontFamily: 'arab',
-                              color: Colors.black,
                               letterSpacing: 2),
                           textAlign: TextAlign.right,
                         ),
@@ -106,9 +104,7 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
                         title: Text(
                           data,
                           style: TextStyle(
-                              fontSize: 23,
-                              fontFamily: 'arab',
-                              color: Colors.black,
+                              fontSize: 20,
                               wordSpacing: 0.5,
                               letterSpacing: 1.5),
                         ),
@@ -122,13 +118,20 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
                         ),
                       ),
                       ListTile(
-                        title: Text(snapshot.data[index].getTasfiir!=null ? '(1)': '',
-                        style: TextStyle(color: Colors.blueAccent),
-                        textAlign: TextAlign.center),
-                        onTap: () => snapshot.data[index].getTasfiir!=null ? showDialog(
-                          context: context,
-                          builder: (BuildContext context) => _buildAboutDialog(context,snapshot.data[index].getTasfiir)): debugPrint("hello"),
-                        ),
+                        title: Text(
+                            snapshot.data[index].getTasfiir != null
+                                ? '(1)'
+                                : '',
+                            style: TextStyle(color: Colors.blueAccent),
+                            textAlign: TextAlign.center),
+                        onTap: () => snapshot.data[index].getTasfiir != null
+                            ? showDialog(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    _buildAboutDialog(context,
+                                        snapshot.data[index].getTasfiir))
+                            : debugPrint("hello"),
+                      ),
                     ],
                   ),
                 );
@@ -167,8 +170,7 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
       text: new TextSpan(
         text: getTasfiir,
         style: const TextStyle(color: Colors.black87),
-        children: <TextSpan>[
-        ],
+        children: <TextSpan>[],
       ),
     );
   }
@@ -189,7 +191,7 @@ class HiikkaaQuraanaState extends State<HiikkaaQuraana> {
             child: const Padding(
               padding: const EdgeInsets.only(left: 12.0),
               child: const Text(
-               '',
+                '',
                 style: const TextStyle(fontSize: 12.0),
               ),
             ),
