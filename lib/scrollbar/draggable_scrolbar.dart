@@ -379,7 +379,7 @@ class _DraggableScrollbarState extends State<DraggableScrollbar>
 
       return NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification notification) {
-          changePosition(notification);
+          return changePosition(notification);
         },
         child: Stack(
           children: <Widget>[

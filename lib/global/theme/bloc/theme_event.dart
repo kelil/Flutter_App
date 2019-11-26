@@ -10,7 +10,6 @@ abstract class ThemeEvent extends Equatable {
 
 class ThemeChanged extends ThemeEvent {
   final AppTheme theme;
-
   ThemeChanged({
     @required this.theme,
   }) : super([theme]);

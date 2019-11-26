@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:quraana_oromiffa/Abouts/about_us.dart';
 import 'package:quraana_oromiffa/db/database.dart';
 import 'package:quraana_oromiffa/md/sura_model.dart';
 import 'package:quraana_oromiffa/preference/preference_page.dart';
@@ -132,6 +133,9 @@ class SuraState extends State<Sura> {
         ));
         break;
       case 'About':
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => AboutUs(),
+        ));
         break;
       case 'Exit':
         SystemNavigator.pop();

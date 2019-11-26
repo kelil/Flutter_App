@@ -8,7 +8,6 @@ import 'package:quraana_oromiffa/global/theme/bloc/theme_event.dart';
 class PreferencePages extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return PreferencePageStates();
   }
 }
@@ -19,6 +18,10 @@ class PreferencePageStates extends State<PreferencePages> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Preferences'),
+        shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(25),
+          )),
       ),
       body: PreferencePage([
         PreferenceTitle('General'),
@@ -34,7 +37,6 @@ class PreferencePageStates extends State<PreferencePages> {
           'Magariisa',
           'magariisa',
           'ui_theme',
-          isDefault: true,
           onSelect: () {
             BlocProvider.of<ThemeBloc>(context).dispatch(
               ThemeChanged(theme: AppTheme.GreenLight),
@@ -43,7 +45,7 @@ class PreferencePageStates extends State<PreferencePages> {
         ),
         RadioPreference(
           'Cuuquliisa',
-          'keelloo',
+          'cuquliisa',
           'ui_theme',
           onSelect: () {
             BlocProvider.of<ThemeBloc>(context).dispatch(
@@ -85,3 +87,4 @@ class PreferencePageStates extends State<PreferencePages> {
     );
   }
 }
+

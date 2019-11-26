@@ -4,9 +4,11 @@ import '../app_themes.dart';
 import './bloc.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
+
   @override
-  ThemeState get initialState =>
-      ThemeState(themeData: appThemeData[AppTheme.GreenLight]);
+  ThemeState get initialState {
+    return ThemeState(themeData: appThemeData[AppTheme.GreenDark]);
+  }
 
   @override
   Stream<ThemeState> mapEventToState(
@@ -16,4 +18,5 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
       yield ThemeState(themeData: appThemeData[event.theme]);
     }
   }
+
 }

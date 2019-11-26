@@ -13,7 +13,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    //  implement build
     return BlocProvider(
       builder: (context) => ThemeBloc(),
       child: BlocBuilder<ThemeBloc, ThemeState>(
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   Widget _buildWithTheme(BuildContext context, ThemeState state) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'Quraan App',
       home: SplashScreen(),
       theme: state.themeData,
     );
